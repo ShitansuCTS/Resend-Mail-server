@@ -3,6 +3,7 @@ import multer from "multer";
 import { Resend } from "resend";
 import dotenv from "dotenv";
 import fs from "fs";
+import cors from "cors";
 
 dotenv.config();
 
@@ -10,6 +11,8 @@ const app = express();
 const upload = multer({ dest: "uploads/" });
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
