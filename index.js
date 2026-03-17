@@ -45,7 +45,7 @@ app.post("/contact", upload.any(), async (req, res) => {
 
         // Send email via Resend
         const emailResponse = await resend.emails.send({
-            from: "Form Notification <admin@thetechtide.site>",
+            from: "Form Notification <admin@odishabiz.com>",
             to: body.sendTo,
             subject: "New Form Submission",
             html: htmlContent,
