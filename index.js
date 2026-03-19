@@ -45,14 +45,14 @@ app.post("/contact", upload.any(), async (req, res) => {
 
         // Send email via Resend
         const emailResponse = await resend.emails.send({
-            from: "Form Notification <admin@odishabiz.com>",
+            from: "Form Notification <admin@testctsl.in>",
             to: body.sendTo,
             subject: "New Form Submission",
             html: htmlContent,
             attachments,
         });
 
-        console.log("Email response from Resend:", emailResponse);
+        // console.log("Email response from Resend:", emailResponse);
 
         // Clean up uploaded files
         if (files) {
